@@ -1,8 +1,11 @@
 import { serveStatic } from '@hono/node-server/serve-static'
+import { handle } from 'frog/vercel'
 import { Button, Frog } from 'frog'
 // import { neynar } from 'frog/hubs'
 
 export const app = new Frog({
+  assetsPath: '/',
+  basePath: '/api',
   // Supply a Hub to enable frame verification.
   // hub: neynar({ apiKey: 'NEYNAR_FROG_FM' })
 })
@@ -40,3 +43,6 @@ app.frame('/submit', (c) => {
     ]
   })
 })
+
+export const GET = handle(app)
+export const POST = handle(app)
