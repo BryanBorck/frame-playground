@@ -5,12 +5,12 @@ import { Button, Frog } from 'frog'
 
 export const app = new Frog({
   assetsPath: '/',
-  basePath: '/api',
+  basePath: '/',
   // Supply a Hub to enable frame verification.
   // hub: neynar({ apiKey: 'NEYNAR_FROG_FM' })
 })
 
-app.use('/*', serveStatic({ root: './public' }))
+// app.use('/*', serveStatic({ root: './public' }))
 
 // Frame to capture user's favorite fruit.
 app.frame('/', (c) => {
